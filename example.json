@@ -1,0 +1,36 @@
+{
+    "name": "orthotropic_strip_hill48",
+    "geometry": {
+        "width": 15.0,
+        "height": 100.0,
+        "thickness": 0.3,
+        "nx": 6,
+        "ny": 40
+    },
+    "material": {
+        "orientation_deg": 30.0,
+        "elasticity": {
+            "model": "orthotropic",
+            "E1": 7000.0,
+            "E2": 3000.0,
+            "nu12": 0.35,
+            "G12": 2000.0
+        },
+        "plasticity": {
+            "yield": "hill48",
+            "yield_stress": 15.0,
+            "hill_ratios": {"R11": 1.0, "R22": 0.55, "R33": 0.6, "R12": 0.6},
+            "isotropic_hardening": {"law": "power", "c": 473.9, "d": 2.023, "p0": 1e-8},
+            "kinematic_hardening": 0.0
+        }
+    },
+    "loading": {
+        "type": "clamped_y",
+        "max_displacement": 2.0,
+        "num_steps": 40
+    },
+    "numerics": {
+        "element_degree": 1,
+        "quadrature_degree": 2
+    }
+}
