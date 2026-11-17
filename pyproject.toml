@@ -1,0 +1,16 @@
+[project]
+name = "plane-stress-plasticity"
+version = "0.1.0"
+description = "Plane-stress anisotropic elasto-plasticity with FEniCSx + JAX"
+readme = "README.md"
+requires-python = ">=3.12"
+# FEniCSx (dolfinx >= 0.10, petsc4py, mpi4py) has no PyPI wheels: it comes from conda.
+# The uv venv is created on top of the conda env's Python with system site packages, see README.
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "jax[cpu]",
+]
+
+[tool.uv]
+package = false
